@@ -2,7 +2,52 @@
 @use './fonts' as *;
 @use './mixins' as *;
 
-body{
+*, *::before, *::after {
     box-sizing: border-box;
-    font-family: 'Avenir New';
+    font-family: "Avenir Next";
+}
+  
+body{
+    margin: 0;
+}
+
+.margin{
+    padding: 0rem 1rem 1rem 1rem;
+    margin: 0 auto;
+    @include tablet{
+        padding: 0rem 3rem 1rem 3rem;
+        margin: 0 auto;
+    }
+    @include desktop{
+        padding: 1rem 6rem;
+        margin: 0 auto;
+    }
+}
+
+.button{
+        display: flex;
+        // max-height: 2rem;
+        background-color: $bf-blue;
+        color: $white;
+        font-weight: 600;
+        width: 17.5rem;
+        border-radius: 0.25rem;
+        border: none;
+        padding: 0.5rem;
+        justify-content: center;
+    &__icon{
+        cursor: pointer;
+        display: flex;
+        align-self:flex-start;
+    }
+    &__upload{
+        background-repeat: no-repeat;
+        background-position: center left;
+    }
+    &__upload::-webkit-file-upload-button {
+        visibility: hidden;
+    }
+    &__text{
+        align-self: center;
+    }
 }
