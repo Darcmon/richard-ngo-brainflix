@@ -21,7 +21,7 @@ function formDate(timestamp){
   return month + "/" + day + "/" + year;
   };
 
-const VideoDetails = ({key, id, title, channel, description,views,likes, timestamp}) => {
+const VideoDetails = ({id, title, channel, description,views,likes, timestamp}) => {
   return (
     <div className="video-details margin">
       <h1>{title}</h1>

@@ -1,0 +1,23 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.video-item{
+    display:flex;
+    &__image{
+        width: 40%;
+        // max-width: 10rem;
+        object-fit:contain;
+        max-height: 100px;
+        border-radius: 0.25rem;
+    }
+    &__container{
+        width: 60%;
+    }
+    &__title{
+        font-weight: 700;
+    }
+    &__channel{
+        
+    }
+}

@@ -1,10 +1,13 @@
 import './Video.scss';
 import VideoDetails from '../VideoDetails/VideoDetails';
+import VideoList from '../VideoList/VideoList';
 
 const Video = (props) => {
 
     const videoData = props.videoData;
-    console.log(videoData);
+    const videoList = props.videoList;
+    // console.log(videoData);
+    // console.log(videoList);
   return (
     <main className="video">
     <div className='video__container'>
@@ -32,11 +35,10 @@ const Video = (props) => {
     likes={details.likes}
     />
     ))} */}
-    
-
-    {/* <VideoList
-    image={videoData.image}
-    /> */}
+        
+    <VideoList
+    videoList = {videoList}
+    />
     </main>
   );
 }
