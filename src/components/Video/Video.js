@@ -7,8 +7,10 @@ const Video = (props) => {
     console.log(videoData);
   return (
     <main className="video">
-    <video className='video__player' controls poster={videoData[0].image}>
+    <div className='video__container'>
+        <video className='video__player' controls poster={videoData[0].image}>
     </video>
+    </div>
     <VideoDetails     
     key={videoData[0].id}
     id={videoData[0].id}
@@ -30,9 +32,9 @@ const Video = (props) => {
     likes={details.likes}
     />
     ))} */}
+    
+
     {/* <VideoList
-    timestamp={videoData.timestamp}
-    duration={videoData.duration}
     image={videoData.image}
     /> */}
     </main>

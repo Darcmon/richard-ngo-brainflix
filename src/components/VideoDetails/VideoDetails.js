@@ -1,4 +1,6 @@
 import './VideoDetails.scss';
+import viewIcon from "../../assets/images/icons/views.svg"
+import likeIcon from "../../assets/images/icons/likes.svg"
 
 
 function formDate(timestamp){
@@ -21,15 +23,25 @@ function formDate(timestamp){
 
 const VideoDetails = ({key, id, title, channel, description,views,likes, timestamp}) => {
   return (
-    <div className='video-details margin'>
-    <h1>{title}</h1>
-    <div className='video-details__container'>
-    <p className='video-details__channel'>By {channel}</p>
-    <p className='video-details__date'>{formDate(timestamp)}</p>
-    <p className='video-details__views'>{views}</p>
-    <p className='video-details__likes'>{likes}</p>
-    </div>
-    <p>{description}</p>
+    <div className="video-details margin">
+      <h1>{title}</h1>
+      <div className="video-details__container">
+        <div className="video-details__left">
+          <p className="video-details__channel">By {channel}</p>
+          <p className="video-details__date">{formDate(timestamp)}</p>
+        </div>
+        <div className="video-details__right">
+          <div>
+            <img src={viewIcon} alt="views icon"/>
+            <p className="video-details__views">{views}</p>
+          </div>
+          <div>
+            <img src={likeIcon} alt="likes icon"/>
+            <p className="video-details__likes">{likes}</p>
+          </div>
+        </div>
+      </div>
+      <p>{description}</p>
     </div>
   );
 }

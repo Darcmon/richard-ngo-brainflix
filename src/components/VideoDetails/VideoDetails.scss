@@ -7,34 +7,61 @@
     flex-direction: column;
     width: 100%;
     max-width: 1280px;
+    @include desktop{
+        width: 70%;
+    }
     &__container{
     display: flex;
     border-bottom: 1px solid $silver;
     border-top: 1px solid $silver;
+    justify-content: space-between;
     @include tablet{
         border-top: none;
     }
     }
+    &__left{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+            width: 30%;
+            justify-content: space-between;
+        }
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+            width: 30%;
+            justify-content: space-between;
+        }
+        > div{
+            display: flex;
+            justify-content: flex-end;
+            @include tablet{
+                justify-content: none;
+            }
+            > img{
+                padding-right: 0.5rem;
+            }
+        }
+    }
     &__channel{
-        order: 1;
         font-weight: 700;
     }
     &__date{
-        order:3;
         color: $silver;
         @include tablet{
-            order: 2;
         }
     }
     &__views{
-        order: 2;
         color: $silver;
         @include tablet{
-            order: 3;
         }
     }
     &__likes{
-        order: 4;
+        align-self: flex-end;
         color: $silver;
     }
 }
