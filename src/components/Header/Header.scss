@@ -5,11 +5,14 @@
 .header{
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
     @include tablet{
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        max-width: 768px;
+    }
+    @include desktop{
+        max-width: 1280px;
     }
     &__logo{
         display: flex;

@@ -6,12 +6,21 @@
     flex-grow: 1;
     position: relative;
     display: flex;
-    width: max-content;
     height: max-content;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     &__player{
         height: 55.75vw;
         width: 100%;
+        background-color: $bf-darkblack;
+        @include tablet{
+            max-width: 768px;
+            // margin: 0 auto;
+        }
+        @include desktop{
+            max-width: 1280px;
+            // margin: 0 auto;
+        }
     }
 }

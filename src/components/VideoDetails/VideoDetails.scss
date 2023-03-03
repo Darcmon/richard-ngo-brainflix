@@ -1,0 +1,40 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.video-details{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1280px;
+    &__container{
+    display: flex;
+    border-bottom: 1px solid $silver;
+    border-top: 1px solid $silver;
+    @include tablet{
+        border-top: none;
+    }
+    }
+    &__channel{
+        order: 1;
+        font-weight: 700;
+    }
+    &__date{
+        order:3;
+        color: $silver;
+        @include tablet{
+            order: 2;
+        }
+    }
+    &__views{
+        order: 2;
+        color: $silver;
+        @include tablet{
+            order: 3;
+        }
+    }
+    &__likes{
+        order: 4;
+        color: $silver;
+    }
+}
