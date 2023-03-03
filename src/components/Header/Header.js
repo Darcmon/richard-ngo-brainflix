@@ -13,20 +13,30 @@ function Header() {
         href="../../public/index.html"
         alt="brainflix logo"
       />
-      <input
-        className="header__search"
-        type="text"
-        placeholder="Search"
-        name="search"
-      ></input>
-      <div className="header__avatar">
-        <img className="header__avatarpic" src={avatarIcon} alt="avatar pic" />
+      <div className="header__order">
+        <div className="header__mobile">
+          <input
+            className="header__search"
+            type="text"
+            placeholder="Search"
+            name="search"
+          ></input>
+          <img className="header__mobile--avatar" src={avatarIcon} alt="avatar pic" />
+          </div>
+          <button className="button" type="submit">
+            <img className="button__icon" src={uploadIcon} alt="upload bar" />
+            <input
+              className="button__upload"
+              type="file"
+              name="filename"
+            ></input>
+            <label className="button__text" for="button__upload">
+              UPLOAD
+            </label>
+            
+          </button>
+          <img className="header__avatar" src={avatarIcon} alt="avatar pic" />
       </div>
-        <button className="button" type="submit">
-          <img className="button__icon" src={uploadIcon} alt="upload bar" />
-          <input className="button__upload" type="file" name="filename"></input>
-          <label className="button__text" for="button__upload">UPLOAD</label>
-        </button>
     </header>
   );
 }

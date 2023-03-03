@@ -27,6 +27,7 @@ body{
 .button{
         display: flex;
         // max-height: 2rem;
+        flex-grow: 1;
         background-color: $bf-blue;
         color: $white;
         font-weight: 600;
@@ -34,11 +35,16 @@ body{
         border-radius: 0.25rem;
         border: none;
         padding: 0.5rem;
-        justify-content: center;
+        // justify-content: center;
+        width: 100%;
+        order: 3;
+        @include tablet{
+            order: 2;
+            width: 65%;
+        }
     &__icon{
         cursor: pointer;
         display: flex;
-        align-self:flex-start;
     }
     &__upload{
         background-repeat: no-repeat;
