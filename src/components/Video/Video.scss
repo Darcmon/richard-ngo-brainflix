@@ -1,0 +1,17 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+
+.video{
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    width: max-content;
+    height: max-content;
+    justify-content: center;
+    align-items: center;
+    &__player{
+        height: 55.75vw;
+        width: 100%;
+    }
+}

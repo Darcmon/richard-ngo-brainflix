@@ -1,5 +1,5 @@
 import logo from "../../assets/images/logo/BrainFlix-logo.svg";
-import searchIcon from "../../assets/images/icons/search.svg";
+// import searchIcon from "../../assets/images/icons/search.svg";
 import avatarIcon from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/images/icons/upload.svg";
 import "./Header.scss";
