@@ -11,4 +11,7 @@
         justify-content: flex-start;
         padding-left: 3rem;
     }
+    @include desktop{
+        border-left: 1px solid $silver;
+    }
 }

@@ -30,4 +30,11 @@
             // margin: 0 auto;
         }
     }
+    &__desktop{
+        display: flex;
+        flex-direction: column;
+        @include desktop{
+            flex-direction: row;
+        }
+    }
 }

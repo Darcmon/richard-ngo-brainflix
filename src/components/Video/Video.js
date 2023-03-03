@@ -14,6 +14,7 @@ const Video = (props) => {
         <video className='video__player' controls poster={videoData[0].image}>
     </video>
     </div>
+    <div className='video__desktop'>
     <VideoDetails     
     key={videoData[0].id}
     id={videoData[0].id}
@@ -39,6 +40,7 @@ const Video = (props) => {
     <VideoList
     videoList = {videoList}
     />
+    </div>
     </main>
   );
 }
