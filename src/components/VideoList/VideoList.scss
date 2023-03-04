@@ -13,5 +13,7 @@
     }
     @include desktop{
         border-left: 1px solid $silver;
+        margin: 0;
+        padding: 1rem;
     }
 }

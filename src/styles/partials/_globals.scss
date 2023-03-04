@@ -11,6 +11,19 @@ body{
     margin: 0;
 }
 
+h1{
+
+}
+
+h2{
+
+}
+
+h3{
+    font-size: 0.75rem;
+    color: $silver;
+}
+
 p{
     margin: 0;
 }
@@ -26,6 +39,10 @@ p{
         padding: 1rem 6rem;
         margin: 0 auto;
     }
+}
+
+.ellipsis{
+    text-overflow: ellipsis;
 }
 
 .button{
