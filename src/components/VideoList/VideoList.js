@@ -6,13 +6,15 @@ const VideoList = (props) => {
     return (
       <section className="video-list">
         <h3>NEXT VIDEOS</h3>
-        {props.videoList.map((item) => (
+        {props.videoList.map((video) => (
           <VideoItem
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            channel={item.channel}
-            image={item.image}
+            video={video}
+            key={video.id}
+            id={video.id}
+            title={video.title}
+            channel={video.channel}
+            image={video.image}
+            updateVideo={props.updateVideo}
           />
         ))}
       </section>

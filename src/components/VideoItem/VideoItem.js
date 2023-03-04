@@ -1,9 +1,14 @@
 import './VideoItem.scss';
 
-const VideoItem = ({id,title,channel,image}) => {
+const VideoItem = ({id,title,channel,image,video,updateVideo}) => {
+    function handleClick(video) {
+        console.log(video)
+        updateVideo(video.id)
+    }
+
     return (
       <>
-        <div className="video-item">
+        <div onClick={() => handleClick(video)} className="video-item">
         <img className='video-item__image' src={image} alt={channel} />
         <div className='video-item__container'>
             <p className='video-item__title'>{title}</p>
