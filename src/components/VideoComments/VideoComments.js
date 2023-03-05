@@ -1,5 +1,6 @@
 import "./VideoComments.scss";
 import avatarIcon from "../../assets/images/Mohan-muruge.jpg";
+import commentIcon from "../../assets/images/icons/add_comment.svg"
 import CommentItem from "../CommentItem/CommentItem";
 
 const VideoComments = (props) => {
@@ -26,6 +27,7 @@ const VideoComments = (props) => {
               placeholder="Add a new comment"
             ></textarea>
             <button className="video-comment__submit" type="submit">
+              <img className="video-comment__icon" src={commentIcon} alt='comment icon'></img>
               COMMENT
             </button>
           </form>

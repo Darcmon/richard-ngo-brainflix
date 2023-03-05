@@ -63,6 +63,7 @@
         color: $bf-darkblack;
     }
     &__submit{
+        display: flex;
         background: $bf-blue;
         color: #FFFFFF;
         padding: 0.75rem;
@@ -70,6 +71,7 @@
         border: none;
         border-radius: 0.25rem;
         margin-bottom: 1rem;
+        align-items: center;
         @include tablet{
             width: 12rem;
             height: 50px;
@@ -80,4 +82,15 @@
             width: 10rem;
         }
     }
+    &__icon{
+        height: 1rem;
+        margin-right: 3rem;
+        @include tablet{
+            margin-right: 2rem;
+        }
+        @include desktop{
+            margin-right: 1.5rem;
+        }
+    }
+    
 }
