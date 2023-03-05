@@ -15,6 +15,7 @@ const VideoList = (props) => {
             channel={video.channel}
             image={video.image}
             updateVideo={props.updateVideo}
+            currentVideo={props.currentVideo}
           />
         ))}
       </section>

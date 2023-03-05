@@ -1,12 +1,12 @@
 import './VideoItem.scss';
 
-const VideoItem = ({id,title,channel,image,video,updateVideo}) => {
+const VideoItem = ({id,title,channel,image,video,updateVideo,currentVideo}) => {
     function handleClick(video) {
         console.log(video)
         updateVideo(video.id)
     }
 
-    return (
+    return currentVideo.id === video.id ? null : (
       <>
         <div onClick={() => handleClick(video)} className="video-item">
         <img className='video-item__image' src={image} alt={channel} />
