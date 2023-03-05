@@ -41,6 +41,18 @@ p{
     }
 }
 
+.video-margin{
+    padding: 0rem 1rem;
+    margin: 0 auto;
+    @include tablet{
+        padding: 0 3rem 1rem 3rem;
+        margin: 0 auto;
+    }
+    @include desktop{
+        padding: 0rem 0rem 1rem 6rem;
+    }
+}
+
 .ellipsis{
     text-overflow: ellipsis;
 }

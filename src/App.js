@@ -12,16 +12,16 @@ function App() {
 
 
   function updateVideo(id){
-    console.log(videoDetails);
+    // console.log(videoDetails);
     const clickedVideo = videoDetails.find(e => {
-      console.log(e);
+      // console.log(e);
       return e.id===id
     })
-    console.log(clickedVideo);
+    // console.log(clickedVideo);
     setSelectedVideo(clickedVideo)
   }
 
-  console.log(videoDetails);
+  // console.log(videoDetails);
 
   return (
     <div className="App">

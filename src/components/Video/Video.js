@@ -1,10 +1,11 @@
 import './Video.scss';
 import VideoDetails from '../VideoDetails/VideoDetails';
 import VideoList from '../VideoList/VideoList';
+import VideoComments from '../VideoComments/VideoComments';
 
 const Video = ({videoData, videoList, currentVideo, updateVideo}) => {
 
-    console.log(currentVideo);
+    // console.log(currentVideo);
 
   return (
     <main className="video">
@@ -13,6 +14,7 @@ const Video = ({videoData, videoList, currentVideo, updateVideo}) => {
     </video>
     </div>
     <div className='video__desktop'>
+    <div className='video__desktop--column'>
     <VideoDetails     
     key={currentVideo.id}
     id={currentVideo.id}
@@ -23,18 +25,11 @@ const Video = ({videoData, videoList, currentVideo, updateVideo}) => {
     likes={currentVideo.likes}
     timestamp={currentVideo.timestamp}
     />
-    {/* {videoData.map( (details) => (
-    <VideoDetails     
-    key={details.id}
-    id={details.id}
-    title={details.title}
-    channel={details.channel}
-    description={details.description}
-    views={details.views}
-    likes={details.likes}
+
+    <VideoComments     
+    currentVideo={currentVideo}
     />
-    ))} */}
-        
+    </div>
     <VideoList
     videoList = {videoList}
     updateVideo = {updateVideo}
