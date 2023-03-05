@@ -23,7 +23,7 @@ function formDate(timestamp){
 
 const VideoDetails = ({id, title, channel, description,views,likes, timestamp}) => {
   return (
-    <div className="video-details margin">
+    <div className="video-details video-margin">
       <h1>{title}</h1>
       <div className="video-details__container">
         <div className="video-details__left">

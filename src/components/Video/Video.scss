@@ -30,12 +30,22 @@
             // margin: 0 auto;
         }
     }
+    &__body{
+        display: flex;
+        justify-content: center;
+    }
     &__desktop{
         display: flex;
         flex-direction: column;
         @include desktop{
             flex-direction: row;
             max-width: 1280px;
+        }
+        &--main{
+            width: 100%;
+            @include desktop{
+                width: 80%;
+            }
         }
     }
 }
