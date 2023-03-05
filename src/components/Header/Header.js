@@ -21,21 +21,20 @@ function Header() {
             placeholder="Search"
             name="search"
           ></input>
-          <img className="header__mobile--avatar" src={avatarIcon} alt="avatar pic" />
-          </div>
-          <button className="button" type="submit">
-            <img className="button__icon" src={uploadIcon} alt="upload bar" />
-            <input
-              className="button__upload"
-              type="file"
-              name="filename"
-            ></input>
-            <label className="button__text" for="button__upload">
-              UPLOAD
-            </label>
-            
+          <img
+            className="header__mobile--avatar"
+            src={avatarIcon}
+            alt="avatar pic"
+          />
+        </div>
+        <div className="upload-btn-wrapper">
+          <button className="btn">
+            <img className="upload-btn-icon" src={uploadIcon} alt="upload icon"></img>
+            <p className="btn-text">UPLOAD</p>
           </button>
-          <img className="header__avatar" src={avatarIcon} alt="avatar pic" />
+          <input type="file" name="myfile" />
+        </div>
+        <img className="header__avatar" src={avatarIcon} alt="avatar pic" />
       </div>
     </header>
   );
