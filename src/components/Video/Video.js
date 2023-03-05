@@ -31,7 +31,11 @@ const Video = ({ videoData, videoList, currentVideo, updateVideo }) => {
 
             <VideoComments currentVideo={currentVideo} />
           </div>
-          <VideoList videoList={videoList} updateVideo={updateVideo} />
+          <VideoList
+          videoList={videoList}
+          updateVideo={updateVideo}
+          currentVideo={currentVideo}
+          />
         </div>
       </div>
     </main>

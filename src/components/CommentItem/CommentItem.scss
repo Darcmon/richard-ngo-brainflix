@@ -55,6 +55,7 @@
     &__text{
         padding: 1rem 0;
         width: 100%;
+        line-height: 1.5rem;
         @include desktop{
             padding-top: 1rem;
             padding-bottom: 0;

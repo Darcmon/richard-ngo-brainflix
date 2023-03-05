@@ -19,19 +19,19 @@ function formDate(timestamp){
     };
 
 const CommentItem = ({comment, name, timestamp}) => {
-console.log(comment);
+// console.log(comment);
   return (
-    <div class="comment">
-      <div class="comment__container">
-        <div class="comment__profile">
-          <p class="comment__image"></p>
+    <div className="comment">
+      <div className="comment__container">
+        <div className="comment__profile">
+          <p className="comment__image"></p>
         </div>
-        <div class="comment__container--entry">
-          <div class="comment__entryheader">
-            <p class="comment__name">{name}</p>
-            <p class="comment__timecode">{formDate(timestamp)}</p>
+        <div className="comment__container--entry">
+          <div className="comment__entryheader">
+            <p className="comment__name">{name}</p>
+            <p className="comment__timecode">{formDate(timestamp)}</p>
           </div>
-          <p class="comment__text">
+          <p className="comment__text">
             {comment}
           </p>
         </div>

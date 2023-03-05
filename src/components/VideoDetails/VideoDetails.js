@@ -41,7 +41,7 @@ const VideoDetails = ({id, title, channel, description,views,likes, timestamp}) 
           </div>
         </div>
       </div>
-      <p>{description}</p>
+      <p className='video-details__description'>{description}</p>
     </div>
   );
 }
