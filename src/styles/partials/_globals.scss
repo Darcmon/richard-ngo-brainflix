@@ -11,14 +11,6 @@ body{
     margin: 0;
 }
 
-h1{
-
-}
-
-h2{
-
-}
-
 h3{
     font-size: 0.75rem;
     color: $silver;
@@ -53,10 +45,6 @@ p{
     }
 }
 
-.ellipsis{
-    text-overflow: ellipsis;
-}
-
 .button{
         display: flex;
         background-color: $bf-blue;
@@ -89,10 +77,10 @@ p{
   display: inline-block;
 }
 
-  .upload-btn-wrapper input[type=file] {
+.upload-btn-wrapper input[type=file] {
     font-size: 25px;
     position:absolute;
     left: 0;
     top: 0;
     opacity: 0;
-  }
+}
