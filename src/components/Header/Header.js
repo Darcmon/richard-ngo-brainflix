@@ -1,5 +1,4 @@
 import logo from "../../assets/images/logo/BrainFlix-logo.svg";
-// import searchIcon from "../../assets/images/icons/search.svg";
 import avatarIcon from "../../assets/images/Mohan-muruge.jpg";
 import uploadIcon from "../../assets/images/icons/upload.svg";
 import "./Header.scss";
@@ -32,7 +31,6 @@ function Header() {
             <img className="upload-btn-icon" src={uploadIcon} alt="upload icon"></img>
             <p className="btn-text">UPLOAD</p>
           </button>
-          <input type="file" name="myfile" />
         </div>
         <img className="header__avatar" src={avatarIcon} alt="avatar pic" />
       </div>
