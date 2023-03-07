@@ -52,6 +52,7 @@
         height: 150px;
         padding: 12px 20px;
         resize: none;
+        outline: none;
         @include tablet{
             height: 50px;
             width: 25rem;
@@ -59,6 +60,9 @@
         @include desktop{
             width: 30rem;
         }
+    }
+    &__input:focus{
+        border: 2px solid $bf-blue;
     }
     &__input::placeholder{
         color: $bf-darkblack;
@@ -82,6 +86,10 @@
         @include desktop{
             width: 10rem;
         }
+    }
+    &__submit:hover{
+        cursor: pointer;
+        background: $bf-darkblue;
     }
     &__icon{
         height: 1rem;
