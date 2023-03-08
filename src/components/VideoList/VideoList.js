@@ -3,6 +3,7 @@ import VideoItem from '../VideoItem/VideoItem'
 
 const VideoList = (props) => {
     // console.log(props)
+
     return (
       <section className="video-list">
         <h3>NEXT VIDEOS</h3>
