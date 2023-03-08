@@ -1,0 +1,13 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/globals' as *;
+
+.upload{
+    border-top: 1px solid $mercury;
+}
+.upload__container{
+    display: flex;
+    flex-direction: column;
+    max-width: 1280px;
+}

@@ -1,11 +1,17 @@
 import "./Upload.scss";
 
 const Upload = (props) => {
-    return (
-        <section className="upload">
-        <h1>hi</h1>
-        </section>
-    )
-}
+  return (
+    <section className="upload margin">
+      <h1 className="upload__title">Upload Video</h1>
+      <div className="upload__container margin">
+        {/* 
+        <UploadThumbnail/>
+        <UploadForm/>
+        */}
+      </div>
+    </section>
+  );
+};
 
 export default Upload;
