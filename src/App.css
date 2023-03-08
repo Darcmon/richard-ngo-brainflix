@@ -1,0 +1,108 @@
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/font/AvenirNextLTPro-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../../assets/font/AvenirNextLTPro-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: "Avenir Next";
+}
+
+body {
+  margin: 0;
+}
+
+h3 {
+  font-size: 0.75rem;
+  color: #AFAFAF;
+}
+
+p {
+  margin: 0;
+}
+
+.margin {
+  padding: 0rem 1rem 1rem 1rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 48rem) {
+  .margin {
+    padding: 0 2rem;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .margin {
+    padding: 0rem 3rem;
+    margin: 0 auto;
+  }
+}
+
+.video-margin {
+  padding: 0rem 1rem;
+  margin: 0 auto;
+}
+@media screen and (min-width: 48rem) {
+  .video-margin {
+    padding: 0 3rem 1rem 3rem;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .video-margin {
+    padding: 0rem 0rem 1rem 0;
+  }
+}
+
+.button {
+  display: flex;
+  background-color: #0095FF;
+  color: #FFFFFF;
+  font-weight: 600;
+  width: 17.5rem;
+  border-radius: 0.25rem;
+  border: none;
+  padding: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  order: 3;
+}
+@media screen and (min-width: 48rem) {
+  .button {
+    order: 2;
+    width: 65%;
+  }
+}
+.button__icon {
+  cursor: pointer;
+  display: flex;
+}
+.button__text {
+  align-self: center;
+}
+
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 25px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.app {
+  display: flex;
+}/*# sourceMappingURL=App.css.map */
