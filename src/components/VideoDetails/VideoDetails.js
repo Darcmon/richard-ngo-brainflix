@@ -1,27 +1,33 @@
 import './VideoDetails.scss';
 import viewIcon from "../../assets/images/icons/views.svg"
 import likeIcon from "../../assets/images/icons/likes.svg"
+import { useParams } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import axios from "axios";
 
-
-function formDate(timestamp){
-
-  let d = new Date(timestamp);
-  let day = d.getDate();
-  let month = d.getMonth() + 1;
-  let year = d.getFullYear();
-
+const VideoDetails = ({title, channel, description,views,likes, timestamp}) => {
   
-  if (day < 10) {
-      day = "0" + day;
-    }
-    if (month < 10) {
-      month = "0" + month;
-    }
+  const [currentVideo, setCurrentVideo] = useState(null);
+  let { id } = useParams();
+  
+  function formDate(timestamp){
 
-  return month + "/" + day + "/" + year;
-  };
+    let d = new Date(timestamp);
+    let day = d.getDate();
+    let month = d.getMonth() + 1;
+    let year = d.getFullYear();
+  
+    
+    if (day < 10) {
+        day = "0" + day;
+      }
+      if (month < 10) {
+        month = "0" + month;
+      }
+  
+    return month + "/" + day + "/" + year;
+    };
 
-const VideoDetails = ({id, title, channel, description,views,likes, timestamp}) => {
   return (
     <div className="video-details video-margin">
       <h1>{title}</h1>
