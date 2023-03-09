@@ -10,4 +10,9 @@
     display: flex;
     flex-direction: column;
     max-width: 1280px;
+    @include tablet{
+        border-top: 1px solid $mercury;
+        border-bottom: 1px solid $mercury;
+
+    }
 }

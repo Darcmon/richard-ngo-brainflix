@@ -1,0 +1,15 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/globals' as *;
+
+
+// .upload__container{
+//     border-top: 1px solid $mercury;
+// }
+.upload__image{
+    border-radius: 0.25rem;
+    @include tablet{
+        width: 50%;
+    }
+}
