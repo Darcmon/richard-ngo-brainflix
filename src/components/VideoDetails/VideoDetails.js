@@ -1,9 +1,6 @@
 import "./VideoDetails.scss";
 import viewIcon from "../../assets/images/icons/views.svg";
 import likeIcon from "../../assets/images/icons/likes.svg";
-// import { useParams } from "react-router-dom";
-// import { useState, useEffect } from "react";
-// import axios from "axios";
 
 const VideoDetails = ({ videoList, currentVideo }) => {
 
@@ -40,9 +37,9 @@ const VideoDetails = ({ videoList, currentVideo }) => {
   //     .catch(error => console.error(error));
   // }, [id]);
 
-  if (currentVideo === null) {
-    return <h1>Loading Video...</h1>;
-  }
+  // if (currentVideo === null) {
+  //   return <h1>Loading Video...</h1>;
+  // }
 
   function formDate(timestamp) {
     let d = new Date(timestamp);

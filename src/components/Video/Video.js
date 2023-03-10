@@ -7,8 +7,6 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const API_URL = "https://project-2-api.herokuapp.com/videos/?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3"
-
 const Video = () => {
   const [videoList, setVideoList] = useState([]);
   const [currentVideo, setCurrentVideo] = useState(null);
@@ -17,21 +15,19 @@ const Video = () => {
 
   if (!videoId) {
     if (videoList.length > 0) {
-      videoId = videoList[0].videoId;
+      videoId = videoList[0].id;
       console.log(videoId);
     }
     // return;
   }
 
   useEffect(() => {
-    axios.get(API_URL)
+    axios.get("https://project-2-api.herokuapp.com/videos/?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3")
       .then(response => {
         console.log(response.data);
         setVideoList(response.data);
       }).catch(error => console.error(error))
     }, [])
-
-
 
   console.log(videoList);
   console.log(videoId);
@@ -46,7 +42,7 @@ const Video = () => {
       .catch(error => console.error(error));
   }, [videoId]);  
 
-  if (videoList.length === 0) {
+  if (videoList.length === 0 || currentVideo === null) {
     console.log("test");
     return (
     <h1>
@@ -77,14 +73,6 @@ const Video = () => {
         <div className="video__desktop">
           <div className="video__desktop--main">
             <VideoDetails
-              // key={currentVideo.id}
-              // id={currentVideo.id}
-              // title={currentVideo.title}
-              // channel={currentVideo.channel}
-              // description={currentVideo.description}
-              // views={currentVideo.views}
-              // likes={currentVideo.likes}
-              // timestamp={currentVideo.timestamp}
               videoList={videoList}
               currentVideo={currentVideo}
             />
