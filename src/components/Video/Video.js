@@ -1,7 +1,7 @@
 import "./Video.scss";
 import VideoDetails from "../VideoDetails/VideoDetails";
-// import videoDetails from "../../data/video-details.json";
 import VideoList from "../VideoList/VideoList";
+import VideoPlayer from "../VideoPlayer/VideoPlayer";
 // import VideoComments from "../VideoComments/VideoComments";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
@@ -17,6 +17,7 @@ const Video = () => {
     if (videoList.length > 0) {
       videoId = videoList[0].id;
       console.log(videoId);
+      // return;
     }
     // return;
   }
@@ -51,23 +52,12 @@ const Video = () => {
     )
   }
 
-
-
-  // let currentVideo = videoDetails.find((e) => {
-  //   return e.id === videoId;
-  // });
-  // if (!currentVideo) {
-  //     currentVideo = videoDetails[0];
-  // }
-
   return (
     <main className="video">
       <div className="video__container">
-        <video
-          className="video__player"
-          controls
-          // poster={currentVideo.image}
-        ></video>
+        <VideoPlayer 
+        currentVideo={currentVideo}
+        />
       </div>
       <div className="video__body">
         <div className="video__desktop">
