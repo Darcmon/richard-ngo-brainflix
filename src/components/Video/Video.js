@@ -11,7 +11,17 @@ const API_URL = "https://project-2-api.herokuapp.com/videos/?api_key=b8ac9af7-8a
 
 const Video = () => {
   const [videoList, setVideoList] = useState([]);
-  const { videoId } = useParams();
+  const [currentVideo, setCurrentVideo] = useState(null);
+
+  let { videoId } = useParams();
+
+  if (!videoId) {
+    if (videoList.length > 0) {
+      videoId = videoList[0].videoId;
+      console.log(videoId);
+    }
+    // return;
+  }
 
   useEffect(() => {
     axios.get(API_URL)
@@ -21,9 +31,20 @@ const Video = () => {
       }).catch(error => console.error(error))
     }, [])
 
+
+
   console.log(videoList);
   console.log(videoId);
     
+  useEffect(() => {
+    axios
+      .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
+      .then(({data}) => {
+        console.log(data);
+        setCurrentVideo(data);
+      })
+      .catch(error => console.error(error));
+  }, [videoId]);  
 
   if (videoList.length === 0) {
     console.log("test");
@@ -33,6 +54,8 @@ const Video = () => {
     </h1>
     )
   }
+
+
 
   // let currentVideo = videoDetails.find((e) => {
   //   return e.id === videoId;
@@ -63,7 +86,7 @@ const Video = () => {
               // likes={currentVideo.likes}
               // timestamp={currentVideo.timestamp}
               videoList={videoList}
-              currentVideoId={videoId}
+              currentVideo={currentVideo}
             />
 
             {/* <VideoComments videoList={videoList} /> */}
@@ -71,7 +94,7 @@ const Video = () => {
           <VideoList
           videoList={videoList}
           // updateVideo={updateVideo}
-          currentVideoId={videoId}
+          currentVideo={currentVideo}
           />
         </div>
       </div>

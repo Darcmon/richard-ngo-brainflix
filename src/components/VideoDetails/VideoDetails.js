@@ -2,24 +2,24 @@ import "./VideoDetails.scss";
 import viewIcon from "../../assets/images/icons/views.svg";
 import likeIcon from "../../assets/images/icons/likes.svg";
 // import { useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-import axios from "axios";
+// import { useState, useEffect } from "react";
+// import axios from "axios";
 
-const VideoDetails = ({ videoList, currentVideoId }) => {
+const VideoDetails = ({ videoList, currentVideo }) => {
 
-  const [currentVideo, setCurrentVideo] = useState(null);
+  // const [currentVideo, setCurrentVideo] = useState(null);
 
-  let id = currentVideoId;
-  console.log(id);
-  console.log(videoList);
+  // let id = currentVideoId;
+  // console.log(id);
+  // console.log(videoList);
  
-  if (!id) {
-    if (videoList.length > 0) {
-      id = videoList[0].id;
-      console.log(id);
-    }
-    // return;
-  }
+  // if (!id) {
+  //   if (videoList.length > 0) {
+  //     id = videoList[0].id;
+  //     console.log(id);
+  //   }
+  //   // return;
+  // }
   
   // let { id } = useParams();
 
@@ -30,15 +30,15 @@ const VideoDetails = ({ videoList, currentVideoId }) => {
   // }, []);
 
 
-  useEffect(() => {
-    axios
-      .get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
-      .then(({data}) => {
-        console.log(data);
-        setCurrentVideo(data);
-      })
-      .catch(error => console.error(error));
-  }, [id]);
+  // useEffect(() => {
+  //   axios
+  //     .get(`https://project-2-api.herokuapp.com/videos/${id}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
+  //     .then(({data}) => {
+  //       console.log(data);
+  //       setCurrentVideo(data);
+  //     })
+  //     .catch(error => console.error(error));
+  // }, [id]);
 
   if (currentVideo === null) {
     return <h1>Loading Video...</h1>;
