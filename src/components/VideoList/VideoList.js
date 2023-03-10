@@ -1,13 +1,13 @@
 import './VideoList.scss';
 import VideoItem from '../VideoItem/VideoItem'
 
-const VideoList = (props) => {
+const VideoList = ({videoList, currentVideoId}) => {
     // console.log(props)
 
     return (
       <section className="video-list">
         <h3>NEXT VIDEOS</h3>
-        {props.videoList.map((video) => (
+        {videoList.map((video) => (
           <VideoItem
             video={video}
             key={video.id}
@@ -15,8 +15,8 @@ const VideoList = (props) => {
             title={video.title}
             channel={video.channel}
             image={video.image}
-            updateVideo={props.updateVideo}
-            currentVideo={props.currentVideo}
+            // updateVideo={props.updateVideo}
+            currentVideoId={currentVideoId}
           />
         ))}
       </section>
