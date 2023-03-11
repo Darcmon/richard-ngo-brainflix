@@ -34,14 +34,19 @@ const Video = () => {
   console.log(videoId);
     
   useEffect(() => {
-    axios
-      .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
-      .then(({data}) => {
-        console.log(data);
-        setCurrentVideo(data);
-      })
-      .catch(error => console.error(error));
-  }, [videoId]);  
+    if (videoList.length > 0) {
+      const videoIndex = videoList.findIndex(video => video.id === videoId);
+      if (videoIndex !== -1) {
+        axios
+          .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
+          .then(({data}) => {
+            console.log(data);
+            setCurrentVideo(data);
+          })
+          .catch(error => console.error(error));
+      }
+    }
+  }, [videoId, videoList]);  
 
   if (videoList.length === 0 || currentVideo === null) {
     console.log("test");
