@@ -3,15 +3,15 @@ import avatarIcon from "../../assets/images/Mohan-muruge.jpg";
 import commentIcon from "../../assets/images/icons/add_comment.svg"
 import CommentItem from "../CommentItem/CommentItem";
 
-const VideoComments = (props) => {
-  const commentList = props.currentVideo;
+const VideoComments = ({currentVideo}) => {
+  const commentList = currentVideo;
   // console.log(commentList);
 
   return (
     <>
       <section className="video-comment video-margin">
         <span className="video-comment__total">
-          {props.currentVideo.comments.length} Comments
+          {currentVideo.comments.length} Comments
         </span>
         <div className="video-comment__container">
           <img className="video-comment__avatar" src={avatarIcon} alt="profile pic" />

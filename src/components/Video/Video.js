@@ -2,7 +2,7 @@ import "./Video.scss";
 import VideoDetails from "../VideoDetails/VideoDetails";
 import VideoList from "../VideoList/VideoList";
 import VideoPlayer from "../VideoPlayer/VideoPlayer";
-// import VideoComments from "../VideoComments/VideoComments";
+import VideoComments from "../VideoComments/VideoComments";
 import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -29,9 +29,6 @@ const Video = () => {
         setVideoList(response.data);
       }).catch(error => console.error(error))
     }, [])
-
-  console.log(videoList);
-  console.log(videoId);
     
   useEffect(() => {
     if (videoList.length > 0) {
@@ -40,7 +37,6 @@ const Video = () => {
         axios
           .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
           .then(({data}) => {
-            console.log(data);
             setCurrentVideo(data);
           })
           .catch(error => console.error(error));
@@ -72,11 +68,12 @@ const Video = () => {
               currentVideo={currentVideo}
             />
 
-            {/* <VideoComments videoList={videoList} /> */}
+            <VideoComments 
+            currentVideo={currentVideo}
+            />
           </div>
           <VideoList
           videoList={videoList}
-          // updateVideo={updateVideo}
           currentVideo={currentVideo}
           />
         </div>
