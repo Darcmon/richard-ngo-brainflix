@@ -1,5 +1,5 @@
 import "./Upload.scss";
-import UploadThumbnail from "../../components/UploadThumbnail/UploadThumbnail";
+import UploadForm from "../../components/UploadForm/UploadForm";
 
 const Upload = (props) => {
   return (
@@ -7,9 +7,8 @@ const Upload = (props) => {
       <h1 className="upload__title">Upload Video</h1>
       <div className="upload__container">
          
-        <UploadThumbnail/>
-        {/*<UploadForm/>
-        */}
+        <UploadForm/>
+       
       </div>
     </section>
   );

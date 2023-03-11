@@ -5,14 +5,18 @@
 
 .upload{
     border-top: 1px solid $mercury;
+    max-width: 1280px;
 }
 .upload__container{
     display: flex;
     flex-direction: column;
-    max-width: 1280px;
+    width: 100%;
+
     @include tablet{
         border-top: 1px solid $mercury;
-        border-bottom: 1px solid $mercury;
+        // border-bottom: 1px solid $mercury;
+    }
+    @include desktop{
 
     }
 }

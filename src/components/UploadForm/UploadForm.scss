@@ -1,0 +1,42 @@
+@use '../../styles/partials/fonts' as *;
+@use '../../styles/partials/mixins' as *;
+@use '../../styles/partials/variables' as *;
+@use '../../styles/partials/globals' as *;
+
+.upload{
+    &__form{
+        display: flex;
+        flex-direction: column;
+        &--boxes{
+            display: flex;
+            flex-direction: column;
+            @include desktop{
+                flex-direction: row;
+            }
+        }
+    }
+    &__input{
+        margin-bottom: 1rem;
+    }
+    &__buttons{
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        @include tablet{
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+    }
+    &__cancel{
+        order:2;
+        @include tablet{
+            order: 1;
+        }
+    }
+    &__publish{
+        order:1;
+        @include tablet{
+            order: 2;
+        }
+    }
+}
