@@ -9,7 +9,7 @@ const UploadForm = (props) => {
         <div className="upload__form--boxes">
         <UploadThumbnail/>
         <input type="hidden" id="date" name="date" value="currentDate" />
-        <div className="upload__container">
+        <div className="upload__container--form">
         <h3 className="video-comment__title">TITLE YOUR VIDEO</h3>
         <textarea
           className="upload__input"
@@ -28,19 +28,14 @@ const UploadForm = (props) => {
         ></textarea>
         </div>
         </div>
-        <div className="upload__container">
+        <div className="upload__container--buttons">
         <div className="upload__buttons">
-          <button className="upload__cancel" type="submit">
-            <img
-              className="upload__icon"
-              src={publishIcon}
-              alt="publish icon"
-            ></img>
+          <button className="upload__cancel button-cancel" type="submit">
             CANCEL
           </button>
-          <button className="upload__publish" type="submit">
+          <button className="upload__publish button" type="submit">
             <img
-              className="upload__icon"
+              className="upload-btn-icon"
               src={publishIcon}
               alt="publish icon"
             ></img>

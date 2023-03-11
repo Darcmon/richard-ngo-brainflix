@@ -19,4 +19,26 @@
     @include desktop{
 
     }
+    &--thumbnail{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        @include desktop{
+            width: 50%;
+            margin-right: 2rem;
+        }
+    }
+    &--buttons{
+        display: flex;
+        width: 100%;
+        @include tablet{
+            justify-content: flex-end;
+            border-top: 1px solid $mercury;
+        }
+    }
+    &--form{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }

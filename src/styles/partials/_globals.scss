@@ -70,6 +70,20 @@ p{
         align-self: center;
     }
 }
+
+.button-cancel{
+    display: flex;
+    background-color: $white;
+    color: $bf-blue;
+    font-weight: 600;
+    width: 17.5rem;
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
   
 .upload-btn-wrapper {
   position: relative;

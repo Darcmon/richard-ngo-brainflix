@@ -12,6 +12,7 @@
             flex-direction: column;
             @include desktop{
                 flex-direction: row;
+                margin-bottom: 2rem;
             }
         }
     }
@@ -22,15 +23,22 @@
         padding-top: 1rem;
         display: flex;
         flex-direction: column;
+        width: 100%;
+        gap: 1rem;
         @include tablet{
+            width: 40%;
             flex-direction: row;
             justify-content: flex-end;
+        }
+        @include desktop{
+
         }
     }
     &__cancel{
         order:2;
         @include tablet{
             order: 1;
+            
         }
     }
     &__publish{
