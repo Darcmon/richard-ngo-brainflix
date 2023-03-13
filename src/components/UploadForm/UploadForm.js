@@ -7,12 +7,10 @@ import { useRef } from "react";
 const UploadForm = (props) => {
   const uploadRef = useRef();
   const navigate = useNavigate();
-  const handleOnSubmit = (event) => {
+  const handleOnSubmit = async (event) => {
     event.preventDefault();
     console.log("Form submitted.");
     const form = uploadRef.current;
-
-
 
     if (event.target.name === "cancel") {
       console.log("Cancel button clicked");
@@ -22,13 +20,20 @@ const UploadForm = (props) => {
 
     if (event.target.name === "publish") {
         console.log("Published!");
-        // form.submit();
+        const submitPromise = new Promise((resolve) => {
+            form.addEventListener("submit", () => {
+              resolve();
+            });
+            form.dispatchEvent(new Event("submit", { cancelable: true }));
+          });
+
+        await submitPromise;
         setTimeout(() => {
             navigate("/");
           }, 2000);
+
         return;
     }
-
   }
 
   return (
