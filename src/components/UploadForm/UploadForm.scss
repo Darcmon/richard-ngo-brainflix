@@ -34,9 +34,44 @@
             color: $white;
         }
     }
-    &__input{
-        margin-bottom: 1rem;
-    }
+        &__input {
+            margin-bottom: 1rem;
+            margin-top: 0.75rem;
+            width: 100%;
+            resize: none;
+            border: 1px solid $mercury;
+            border-radius: 0.25rem;
+            background: $alabaster;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline:none;
+            &--description {
+                margin-bottom: 1rem;
+                margin-top: 0.75rem;
+                width: 100%;
+                height: 92.5px;
+                resize: none;
+                border: 1px solid $mercury;
+                background: $alabaster;
+                padding: 12px 20px;
+                border-radius: 0.25rem;
+                font-size: 1rem;
+                outline:none;
+
+            }
+        }
+        &__input::placeholder{
+            color: $bf-darkblack;
+        }
+        &__input:focus{
+            border: 2px solid $bf-blue;
+        }
+        &__input--description::placeholder{
+            color: $bf-darkblack;
+        }
+        &__input--description:focus{
+            border: 2px solid $bf-blue;
+        }
     &__buttons{
         padding-top: 1rem;
         display: flex;

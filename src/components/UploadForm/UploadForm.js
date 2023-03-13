@@ -63,7 +63,7 @@ const UploadForm = (props) => {
             ></textarea>
             <h3 className="video-comment__title">ADD A VIDEO DESCRIPTION</h3>
             <textarea
-              className="upload__input"
+              className="upload__input--description"
               id="description"
               type="text"
               name="description"
