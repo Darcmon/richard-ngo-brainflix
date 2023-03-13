@@ -23,6 +23,9 @@ const UploadForm = (props) => {
     if (event.target.name === "publish") {
         console.log("Published!");
         // form.submit();
+        setTimeout(() => {
+            navigate("/");
+          }, 2000);
         return;
     }
 
