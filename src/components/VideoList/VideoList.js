@@ -2,7 +2,6 @@ import './VideoList.scss';
 import VideoItem from '../VideoItem/VideoItem'
 
 const VideoList = ({videoList, currentVideo}) => {
-    // console.log(props)
 
     return (
       <section className="video-list">
@@ -15,7 +14,6 @@ const VideoList = ({videoList, currentVideo}) => {
             title={video.title}
             channel={video.channel}
             image={video.image}
-            // updateVideo={props.updateVideo}
             currentVideo={currentVideo}
           />
         ))}

@@ -5,8 +5,11 @@ import CommentItem from "../CommentItem/CommentItem";
 
 const VideoComments = ({currentVideo}) => {
   const commentList = currentVideo;
-  // console.log(commentList);
 
+  const handleOnSubmit = (event) => {
+    event.preventDefault();
+    };
+    
   return (
     <>
       <section className="video-comment video-margin">
@@ -26,7 +29,7 @@ const VideoComments = ({currentVideo}) => {
               name="message"
               placeholder="Add a new comment"
             ></textarea>
-            <button className="video-comment__submit" type="submit">
+            <button className="video-comment__submit" type="submit" onClick={handleOnSubmit}>
               <img className="video-comment__icon" src={commentIcon} alt='comment icon'></img>
               COMMENT
             </button>
