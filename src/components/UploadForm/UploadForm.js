@@ -2,11 +2,13 @@ import "./UploadForm.scss";
 import UploadThumbnail from "../../components/UploadThumbnail/UploadThumbnail";
 import publishIcon from "../../assets/images/icons/publish.svg";
 import { useNavigate } from "react-router-dom";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 const UploadForm = (props) => {
   const uploadRef = useRef();
   const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(false);
+
   const handleOnSubmit = async (event) => {
     event.preventDefault();
     console.log("Form submitted.");
@@ -18,27 +20,35 @@ const UploadForm = (props) => {
       return;
     }
 
+    setIsLoading(true);
+
+
     if (event.target.name === "publish") {
-        console.log("Published!");
-        const submitPromise = new Promise((resolve) => {
-            form.addEventListener("submit", () => {
-              resolve();
-            });
-            form.dispatchEvent(new Event("submit", { cancelable: true }));
-          });
+      console.log("Published!");
+      
+      const submitPromise = new Promise((resolve) => {
+        form.addEventListener("submit", () => {
+          resolve();
+        });
+        form.dispatchEvent(new Event("submit", { cancelable: true }));
+      });
 
-        await submitPromise;
-        setTimeout(() => {
-            navigate("/");
-          }, 2000);
 
-        return;
+
+      await submitPromise;
+    //   setIsLoading(false);
+      setTimeout(() => {
+        navigate("/");
+      }, 3000);
+
+      return;
     }
-  }
+  };
 
   return (
     <>
       <form className="upload__form" ref={uploadRef}>
+      {isLoading && <div className="upload__overlay"><h1 className="upload__overlay--text">Submitted! Will proceed to home in 3s...</h1></div>}
         <div className="upload__form--boxes">
           <UploadThumbnail />
           <input type="hidden" id="date" name="date" value="currentDate" />
