@@ -55,11 +55,13 @@ const Video = () => {
     )
   }
 
+  console.log(currentVideo);
+
   return (
     <main className="video">
       <div className="video__container">
         <VideoPlayer 
-        currentVideo={currentVideo}
+        currentVideo={currentVideo.video}
         />
       </div>
       <div className="video__body">
@@ -67,7 +69,7 @@ const Video = () => {
           <div className="video__desktop--main">
             <VideoDetails
               videoList={videoList}
-              currentVideo={currentVideo}
+              currentVideo={currentVideo.video}
             />
 
             <VideoComments 
@@ -76,7 +78,7 @@ const Video = () => {
           </div>
           <VideoList
           videoList={videoList}
-          currentVideo={currentVideo}
+          currentVideo={currentVideo.video}
           />
         </div>
       </div>
