@@ -7,6 +7,8 @@ import { useParams } from 'react-router-dom';
 import { useState, useEffect } from "react";
 import axios from "axios";
 
+const REACT_URL = process.env.REACT_APP_BASE_URL;
+
 const Video = () => {
   const [videoList, setVideoList] = useState([]);
   const [currentVideo, setCurrentVideo] = useState(null);
@@ -23,7 +25,7 @@ const Video = () => {
   }
 
   useEffect(() => {
-    axios.get("https://project-2-api.herokuapp.com/videos/?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3")
+    axios.get(`${REACT_URL}`)
       .then(response => {
         console.log(response.data);
         setVideoList(response.data);
@@ -35,7 +37,7 @@ const Video = () => {
       const videoIndex = videoList.findIndex(video => video.id === videoId);
       if (videoIndex !== -1) {
         axios
-          .get(`https://project-2-api.herokuapp.com/videos/${videoId}?api_key=b8ac9af7-8af8-4cd9-905d-c2ab0ef0d3a3`)
+          .get(`${REACT_URL}/videos/${videoId}`)
           .then(({data}) => {
             setCurrentVideo(data);
           })
@@ -45,7 +47,7 @@ const Video = () => {
   }, [videoId, videoList]);  
 
   if (videoList.length === 0 || currentVideo === null) {
-    console.log("test");
+    // console.log("test");
     return (
     <h1>
         Loading...

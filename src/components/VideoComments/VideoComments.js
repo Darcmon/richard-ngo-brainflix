@@ -4,8 +4,8 @@ import commentIcon from "../../assets/images/icons/add_comment.svg"
 import CommentItem from "../CommentItem/CommentItem";
 
 const VideoComments = ({currentVideo}) => {
-  const commentList = currentVideo;
-
+  const commentList = currentVideo.video.comments;
+  
   const handleOnSubmit = (event) => {
     event.preventDefault();
     };
@@ -14,7 +14,7 @@ const VideoComments = ({currentVideo}) => {
     <>
       <section className="video-comment video-margin">
         <span className="video-comment__total">
-          {currentVideo.comments.length} Comments
+          {currentVideo.video.comments.length} Comments
         </span>
         <div className="video-comment__container">
           <img className="video-comment__avatar" src={avatarIcon} alt="profile pic" />
@@ -36,7 +36,7 @@ const VideoComments = ({currentVideo}) => {
           </form>
           </div>
         </div>
-        {commentList.comments.map((commentData) => (
+        {commentList.map((commentData) => (
           <CommentItem 
           key={commentData.id}
           id={commentData.id}
