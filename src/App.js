@@ -5,14 +5,6 @@ import HomePage from "./pages/HomePage/HomePage";
 import Upload from "./pages/Upload/Upload";
 
 function App() {
-  // const [selectedVideo, setSelectedVideo] = useState(videoDetails[0]);
-
-  // function updateVideo(id) {
-  //   const clickedVideo = videoDetails.find((e) => {
-  //     return e.id === id;
-  //   });
-  //   setSelectedVideo(clickedVideo);
-  // }
 
   return (
     <div className="App">

@@ -6,12 +6,6 @@
     display:flex;
     max-width: 288px;
     margin: 0.5rem 0;
-    a {
-        text-decoration: none !important;
-        &:hover {
-          text-decoration: none !important;
-        }
-    }
     &__image{
         width: 40%;
         object-fit: cover;
