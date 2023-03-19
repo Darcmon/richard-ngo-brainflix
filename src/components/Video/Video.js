@@ -18,14 +18,12 @@ const Video = () => {
   if (!videoId) {
     if (videoList.length > 0) {
       videoId = videoList[0].id;
-      console.log(videoId);
     }
   }
 
   useEffect(() => {
     axios.get(`${REACT_URL}`)
       .then(response => {
-        console.log(response.data);
         setVideoList(response.data);
       }).catch(error => console.error(error))
     }, [])
@@ -51,8 +49,6 @@ const Video = () => {
     </h1>
     )
   }
-
-  console.log(currentVideo);
 
   return (
     <main className="video">

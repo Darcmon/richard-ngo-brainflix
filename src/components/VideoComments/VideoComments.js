@@ -5,8 +5,6 @@ import CommentItem from "../CommentItem/CommentItem";
 
 const VideoComments = ({currentVideo}) => {
   const commentList = currentVideo.comments;
-  console.log(currentVideo);
-  console.log(currentVideo.comments);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
