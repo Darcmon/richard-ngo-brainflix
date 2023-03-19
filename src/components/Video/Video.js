@@ -19,9 +19,7 @@ const Video = () => {
     if (videoList.length > 0) {
       videoId = videoList[0].id;
       console.log(videoId);
-      // return;
     }
-    // return;
   }
 
   useEffect(() => {
@@ -47,7 +45,6 @@ const Video = () => {
   }, [videoId, videoList]);  
 
   if (videoList.length === 0 || currentVideo === null) {
-    // console.log("test");
     return (
     <h1>
         Loading...
@@ -73,7 +70,7 @@ const Video = () => {
             />
 
             <VideoComments 
-            currentVideo={currentVideo}
+            currentVideo={currentVideo.video}
             />
           </div>
           <VideoList

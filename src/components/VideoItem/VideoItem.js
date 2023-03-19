@@ -1,7 +1,7 @@
 import './VideoItem.scss';
 import { Link } from 'react-router-dom';
 
-const VideoItem = ({id,title,channel,image,currentVideo,video}) => {
+const VideoItem = ({title,channel,image,currentVideo,video}) => {
 
     return currentVideo.id === video.id ? null : (
       <Link to={`/video/${video.id}`} className="video-item">
@@ -13,5 +13,5 @@ const VideoItem = ({id,title,channel,image,currentVideo,video}) => {
       </Link>
     );
   }
-  
+
   export default VideoItem;
