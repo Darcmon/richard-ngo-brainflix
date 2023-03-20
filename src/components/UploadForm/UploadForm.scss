@@ -94,10 +94,17 @@
             
         }
     }
+    &__cancel:hover{
+        cursor: pointer;
+    }
     &__publish{
         order:1;
         @include tablet{
             order: 2;
         }
+    }
+    &__publish:hover{
+        cursor: pointer;
+        background: $bf-darkblue;
     }
 }

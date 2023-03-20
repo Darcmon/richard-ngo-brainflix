@@ -2,19 +2,23 @@ import "./UploadForm.scss";
 import UploadThumbnail from "../../components/UploadThumbnail/UploadThumbnail";
 import publishIcon from "../../assets/images/icons/publish.svg";
 import { useNavigate } from "react-router-dom";
-import { useRef, useState } from "react";
+import { useState } from "react";
+import axios from "axios";
+
+const REACT_URL = process.env.REACT_APP_BASE_URL;
 
 const UploadForm = (props) => {
-  const uploadRef = useRef();
   const navigate = useNavigate();
+  const [buttonClicked, setButtonClicked] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleOnSubmit = async (event) => {
     event.preventDefault();
-    console.log("Form submitted.");
-    const form = uploadRef.current;
+    console.log(event.target);
 
-    if (event.target.name === "cancel") {
+    if (buttonClicked === "cancel") {
       console.log("Cancel button clicked");
       navigate("/");
       return;
@@ -22,36 +26,56 @@ const UploadForm = (props) => {
 
     setIsLoading(true);
 
-
-    if (event.target.name === "publish") {
+    if (buttonClicked === "publish") {
       console.log("Published!");
-      
-      const submitPromise = new Promise((resolve) => {
-        form.addEventListener("submit", () => {
-          resolve();
-        });
-        form.dispatchEvent(new Event("submit", { cancelable: true }));
-      });
-
-
-
-      await submitPromise;
-    //   setIsLoading(false);
-      setTimeout(() => {
-        navigate("/");
-      }, 3000);
+      const currentDate = new Date();
+      const unixTime = Math.floor(currentDate.getTime());
+      const data = {
+        title,
+        description,
+        timestamp: unixTime,
+      };
+      console.log("Data to be submitted:", data);
+      axios.post(`${REACT_URL}/videos`, data)
+      .then(() => {
+        event.target.reset();
+        setTimeout(() => {
+          setIsLoading(false);
+          navigate("/");
+        }, 3000);
+      })
+      .catch(error => console.log(error));
 
       return;
     }
   };
 
+  const handleTitleChange = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const handleDescriptionChange = (event) => {
+    setDescription(event.target.value);
+  };
+
   return (
     <>
-      <form className="upload__form" ref={uploadRef}>
-      {isLoading && <div className="upload__overlay"><h1 className="upload__overlay--text">Submitted! Will proceed to home in 3s...</h1></div>}
+      <form className="upload__form" onSubmit={handleOnSubmit}>
+        {isLoading && (
+          <div className="upload__overlay">
+            <h1 className="upload__overlay--text">
+              Submitted! Will proceed to home in 3s...
+            </h1>
+          </div>
+        )}
         <div className="upload__form--boxes">
           <UploadThumbnail />
-          <input type="hidden" id="date" name="date" value="currentDate" />
+          <input
+            type="hidden"
+            id="date"
+            name="date"
+            value="currentDate"
+          />
           <div className="upload__container--form">
             <h3 className="video-comment__title">TITLE YOUR VIDEO</h3>
             <textarea
@@ -60,14 +84,20 @@ const UploadForm = (props) => {
               type="text"
               name="title"
               placeholder="Add a title to your video"
+              value={title}
+              onChange={handleTitleChange}
             ></textarea>
-            <h3 className="video-comment__title">ADD A VIDEO DESCRIPTION</h3>
+            <h3 className="video-comment__title">
+              ADD A VIDEO DESCRIPTION
+            </h3>
             <textarea
               className="upload__input--description"
               id="description"
               type="text"
               name="description"
               placeholder="Add a description to your video"
+              value={description}
+              onChange={handleDescriptionChange}
             ></textarea>
           </div>
         </div>
@@ -77,7 +107,7 @@ const UploadForm = (props) => {
               className="upload__cancel button-cancel"
               type="submit"
               name="cancel"
-              onClick={handleOnSubmit}
+              onClick={() => setButtonClicked('cancel')}
             >
               CANCEL
             </button>
@@ -85,7 +115,7 @@ const UploadForm = (props) => {
               className="upload__publish button"
               type="submit"
               name="publish"
-              onClick={handleOnSubmit}
+              onClick={() => setButtonClicked('publish')}
             >
               <img
                 className="upload-btn-icon"
